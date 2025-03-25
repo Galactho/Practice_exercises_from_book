@@ -1,0 +1,37 @@
+import random
+
+values = ['Head','Tail']
+list = []
+list_streak = []
+streak_h = 0
+streak_t = 0
+numOfStreaks = 0
+count_down = 0
+count_up = 3
+
+# create list with h & t
+for i in range(10000):
+    list.append(random.choice(values))
+print(list)
+print('')
+
+# checking for strikes
+for item in list:
+    if 'Head' not in list[count_down:count_up]:
+        print(f'List of streaks: {list[count_down:count_up]}')
+        numOfStreaks += 1
+        streak_t += 1
+        count_down += 1
+        count_up += 1
+    elif 'Tail' not in list[count_down:count_up]:
+        print(f'List of streaks: {list[count_down:count_up]}')
+        numOfStreaks += 1
+        streak_h += 1
+        count_down += 1
+        count_up += 1
+        
+# display data
+print(f'Number of streaks: {numOfStreaks}')
+print('Chance of streak: %s%%' % (numOfStreaks / 100))
+print(f'Head streaks: {streak_h}')
+print(f'Tail streaks: {streak_t}')
