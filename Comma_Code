@@ -1,0 +1,14 @@
+def list_comma(list):
+    # Separates each item from the list by a comma
+    if len(list) > 0:
+        for item in list:
+            if item == list[-1]:
+                print(f'{item}', end = '')
+            else:
+                print(f'{item}' + ', ', end = '')
+    else:
+        print('Empty list!')
+
+list = ['perro','gato','pez','caballo']
+list2 = []
+list_comma(list)
