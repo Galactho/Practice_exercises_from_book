@@ -1,0 +1,24 @@
+# Practice Exercise: Dictionary Validator
+
+# the dictionary modeling chess board
+chessBoard =    {'a8':'brook', 'b8':'bknight', 'c8':'bbishop', 'd8':'bqueen', 'e8':'bking', 'f8':'bbishop', 'g8':'bknight', 'h8':'brook',
+                'a7':'bpawn', 'b7':'bpawn', 'c7':'bpawn', 'd7':'bpawn', 'e7':'bpawn', 'f7':'bpawn', 'g7':'bpawn', 'h7':'bpawn',
+                'a6':'', 'b6':'', 'c6':'', 'd6':'', 'e6':'', 'f6':'', 'g6':'', 'h6':'',
+                'a5':'', 'b5':'', 'c5':'', 'd5':'', 'e5':'', 'f5':'', 'g5':'', 'h5':'',
+                'a4':'', 'b4':'', 'c4':'', 'd4':'', 'e4':'', 'f4':'', 'g4':'', 'h4':'',
+                'a3':'', 'b3':'', 'c3':'', 'd3':'', 'e3':'', 'f3':'', 'g3':'', 'h3':'',
+                'a2':'wpawn', 'b2':'wpawn', 'c2':'wpawn', 'd2':'wpawn', 'e2':'wpawn', 'f2':'wpawn', 'g2':'wpawn', 'h2':'wpawn',
+                'a1':'wrook', 'b1':'wknight', 'c1':'wbishop', 'd1':'wqueen', 'e1':'wking', 'f1':'wbishop', 'g1':'wknight', 'h1':'wrook'}
+
+
+# function
+def isValidChessBoard(dictionary, value):
+    # this function receives a dictionary parameter and return True or False if is on it
+    if value in dictionary.keys():
+        return True
+    elif value not in dictionary.keys():
+        return False
+      
+value = str(input('Write a valid chessboard position (Introduce nothing to exit): '))
+if value != '':
+    print(isValidChessBoard(chessBoard, value))
