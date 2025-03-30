@@ -1,0 +1,25 @@
+
+# List to Dictionary Function for Fantasy Game Inventory
+
+inventory = {'arrow':16, 'shield':1, 'life potion': 5, 'mana potion':5, 'gloves':1, 'daggers':6, 'helm':1}
+new_item = ('gold coin', 40)
+
+def displayInventory(dictionary):
+    # display inventory content
+    total_items = 0
+    print('Inventory:')
+    for k, v in dictionary.items():
+        print(f'{v} {k}')
+        total_items += v
+    print(f'Total number of items: {total_items}')
+
+def addToInventory(inventory, addedItems):
+    # add items to inventory and return it
+    if addedItems[0] not in inventory.keys():
+        inventory.setdefault(addedItems[0], addedItems[1])
+    else:
+        inventory[addedItems[0]] += addedItems[1]
+    return inventory
+    
+displayInventory(addToInventory(inventory, ('gold coin',40)))
+displayInventory(addToInventory(inventory, ('arrow',3)))
