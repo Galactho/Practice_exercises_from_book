@@ -1,0 +1,13 @@
+# Fantasy Game Inventory
+
+inventory = {'arrow':16, 'shield':1, 'life potion': 5, 'mana potion':5, 'gloves':1, 'daggers':6, 'helm':1}
+
+def displayInventory(dictionary):
+    total_items = 0
+    print('Inventory:')
+    for k, v in dictionary.items():
+        print(f'{v} {k}')
+        total_items += v
+    print(f'Total number of items: {total_items}')
+
+displayInventory(inventory)
