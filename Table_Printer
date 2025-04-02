@@ -1,0 +1,26 @@
+#! python
+# Practice Projects - Chapter 6 - Table Printer
+# list variable
+tableData = [
+            ['apples', 'oranges', 'cherries', 'banana'],
+            ['Alice', 'Bob', 'Carol', 'David'],
+            ['dogs', 'cats', 'moose', 'goose']
+            ]
+
+# method to organize list in columns
+def printTable(list):
+    colWidhts = []  # list to store the max lenght of each list item
+    count = 0
+    for item in list:   # this for cycle will repeat 3 times
+        colWidhts.append([])    # add a list on each item 
+        for j in item:  # this for cycle will repeat 4 times on each list item (12 times in total)
+            colWidhts[count].append(len(j)) # on each inner list just added, store the list item´s lenght value
+        count += 1
+    
+    for j in range(len(list[0])):   # this for cycle will repeat 1 time per each item in first element list (4 columns)
+        for i in range(len(list)):  # this for cycle will repeat 3 timesn the list lenght (3 rows)
+            print((list[i][j]).rjust(max(colWidhts[i])), end = '  ')    # printing each list item right adjusted as much the measures list indicates 
+        print('\n' * 1)
+            
+# calling method sending list
+printTable(tableData)
