@@ -1,0 +1,17 @@
+#! python
+# bulletPointAdder.py - Adds Wikipedia bullet points to the start
+# of each line of text on the clipboard
+
+import pyperclip
+
+# paste the text on clipboard to a string variable
+text = pyperclip.paste()
+
+# Separate lines and add stars
+lines = text.split('\n')    # use methos split to separate text by every \n  and creates a list
+for i in range(len(lines)): # for every item in the list lines
+    lines[i] = '* ' + lines[i]   # concatenates a * at the start of the item
+text = '\n'.join(lines) # use join method to create one string value
+
+# copy the result text to clipboard
+pyperclip.copy(text)
